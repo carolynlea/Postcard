@@ -15,6 +15,7 @@ class ViewController: UIViewController
     @IBOutlet weak var enterNameTextfield: UITextField!
     @IBOutlet weak var enterMessageTextfield: UITextField!
     @IBOutlet weak var mailButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
     
     @IBAction func sendMailButtonPressed(sender: UIButton)
     {
@@ -23,9 +24,14 @@ class ViewController: UIViewController
         
         messageLabel.hidden = false
         messageLabel.text = enterMessageTextfield.text
+        messageLabel.textColor = UIColor.redColor()
+        nameLabel.hidden = false
+        nameLabel.text = enterNameTextfield.text
+        nameLabel.textColor = UIColor.blueColor()
+        enterNameTextfield.text = ""
         enterMessageTextfield.text = ""
         enterMessageTextfield.resignFirstResponder()
-        messageLabel.textColor = UIColor.redColor()
+        
         mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
     }
     
